@@ -1,0 +1,78 @@
+*,
+*::before,
+*::after{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.Container{
+  width: 500px;
+  padding: 20px;
+  min-height: 100px;
+  margin: 50px auto;
+  border: 1px solid #ddd;
+  box-shadow: -1px 1px 4px #ddd, 1px -1px 4px #ddd;
+}
+/* Bio */
+.Bio{
+  margin-bottom: 30px;
+}
+.Bio h3{
+  font-size: 24px;
+  font-weight: 400;
+}
+.Bio p{
+  font-size: 17px;
+  color: #222222;
+  margin-top: 5px;
+}
+/* Skills */
+.Skills{
+  margin-bottom: 30px;
+}
+.Skills h3{
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+.Skills ul{
+  list-style-type: none;
+}
+.Skills ul li{
+  display: inline-block;
+  padding: 5px 15px;
+  margin-right: 20px;
+  background: #efefef;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+.Skills ul li:hover{
+  background: #d8d8d8;
+  cursor: pointer;
+}
+/* Links */
+.Links{
+  margin-bottom: 15px;
+}
+.Links h3{
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+.Links ul li{
+  display: inline-block;
+  padding: 5px 15px;
+  margin-right: 20px;
+}
+.Links ul li a{
+  color: #02075d;
+  font-weight: bold;
+  text-decoration: none;
+}
+.Links ul li a:hover{
+  color: #ffa500;
+}
