@@ -4,11 +4,14 @@ const shopResult = "Showing 01 - 12 of 159 Results";
 import Data from "../../products.json";
 import ProductCards from "./ProductCards";
 import Pagination from "./Pagination";
+import Search from "./Search";
+import ShopCategory from "./ShopCategory";
+import PopularPost from "./PopularPost";
+import Tags from "./Tags";
 
 const Shop = () => {
   const [gridList, setGridList] = useState(true);
   const [products, setProducts] = useState(Data);
-  console.log(products);
 
   // Pagination
   const [currentPage, setCurrentPage] = useState(1);
@@ -23,6 +26,18 @@ const Shop = () => {
   // Function to change the current page
   const paginate = (pageNumber) => {
     setCurrentPage(pageNumber);
+  };
+
+  // Filter products basedd on category
+  const [selectedCategory, setSelectedCategory] = useState("All");
+  const menuItems = [...new Set(Data.map((value) => value.category))];
+
+  const filterItem = (curcat) => {
+    const newItem = Data.filter((newValue) => {
+      return newValue.category === curcat;
+    });
+    setSelectedCategory(curcat);
+    setProducts(newItem);
   };
 
   return (
@@ -53,7 +68,10 @@ const Shop = () => {
 
                 {/* Product Cards */}
                 <div>
-                  <ProductCards gridList={gridList} products={currentProducts} />
+                  <ProductCards
+                    gridList={gridList}
+                    products={currentProducts}
+                  />
                 </div>
 
                 <Pagination
@@ -64,8 +82,22 @@ const Shop = () => {
                 />
               </article>
             </div>
+
             {/* right side */}
-            <div className="col-lg-4 col-12">Right Side</div>
+            <div className="col-lg-4 col-12">
+              <aside>
+                <Search products={products} gridList={gridList} />
+                <ShopCategory
+                  filterItem={filterItem}
+                  setItem={setProducts}
+                  menuItems={menuItems}
+                  setProducts={setProducts}
+                  selectedCategory={selectedCategory}
+                />
+                <PopularPost/>
+                <Tags/>
+              </aside>
+            </div>
           </div>
         </div>
       </div>

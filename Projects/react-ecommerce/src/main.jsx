@@ -18,6 +18,8 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 // pages
 import Home from "./pages/home/Home.jsx";
 import Shop from "./pages/shop/Shop.jsx";
+import SingleProduct from "./pages/shop/SingleProduct.jsx";
+
 import Blog from "./pages/blog/Blog.jsx";
 import About from "./pages/about/About.jsx";
 import Contact from "./pages/contact/Contact.jsx";
@@ -29,6 +31,8 @@ const router = createBrowserRouter([
     children: [
       { path: "/", element: <Home /> },
       { path: "/shop", element: <Shop /> },
+      { path: "/:id", element: <SingleProduct /> },
+
       { path: "/blog", element: <Blog /> },
       { path: "/about", element: <About /> },
       { path: "/contact", element: <Contact /> },
