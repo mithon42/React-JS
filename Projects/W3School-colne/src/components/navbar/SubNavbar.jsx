@@ -1,5 +1,6 @@
 import React from "react";
 import ListLi from "./ListLi";
+import { subMenuLinkData } from "../../data/Data";
 
 function SubNavbar() {
   return (
@@ -22,6 +23,15 @@ function SubNavbar() {
         <ListLi text="mysqal" />
         <ListLi text="jquery" />
         <ListLi text="excel" />
+        
+{/* 
+        {subMenuLinkData.map(({ text, path }, index) => {
+          return (
+            <li key={index}>
+              <NavLink to={path}>{text}</NavLink>
+            </li>
+          );
+        })} */}
       </ul>
     </div>
   );

@@ -8,7 +8,7 @@ function App() {
   return (
     <>
       {/* <ImageToPdf /> */}
-      {/* <ImgToPdf /> */}
+      <ImgToPdf />
       {/* <QrCodeGenerator/> */}
     </>
   );
